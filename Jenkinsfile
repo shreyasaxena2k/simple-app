@@ -19,7 +19,7 @@ pipeline {
 
 //                     def mavenPom = readMavenPom file: 'pom.xml'
 //                     def nexusRepoName = mavenPom.version.endsWith("SNAPSHOT") ? "simpleapp-snapshot" : "simpleapp-release"
-                    nexusArtifactUploader artifacts: [
+                        nexusArtifactUploader artifacts: [
                         [artifactId: 'simple-app', 
                          classifier: '',
                          file: 'target/simple-app-3.0.0-SNAPSHOT.war', 
@@ -32,6 +32,7 @@ pipeline {
                          protocol: 'http',
                          repository: 'maven-central-repo', 
                          version: '3.0.0-SNAPSHOT'
+                }
             }
         }
     }
